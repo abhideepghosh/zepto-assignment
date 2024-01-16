@@ -1,3 +1,10 @@
+.form-container {
+  display: flex;
+  flex-direction: row;
+  max-height: min-content;
+  min-height: 50px;
+  flex-wrap: wrap;
+}
 .emailSpan {
   margin-left: 1rem;
   text-align: left;

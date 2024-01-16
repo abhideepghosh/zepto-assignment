@@ -98,15 +98,7 @@ const AddUser = () => {
     setHighlightedSearchItem(0);
   };
   return (
-    <form
-      onSubmit={formSubmit}
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        maxHeight: "min-content",
-        minHeight: "50px",
-      }}
-    >
+    <form className="form-container" onSubmit={formSubmit}>
       {labels.map((d, i) => (
         <Label
           imgURL={d.imgURL}
