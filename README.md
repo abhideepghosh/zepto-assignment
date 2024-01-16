@@ -1,8 +1,18 @@
-# React + Vite
+## Project Details
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. Created by Abhideep Ghosh
+2. Hosted Link: https://zepto-assignment-abhideep.vercel.app/
+3. Github Link: https://github.com/abhideepghosh/zepto-assignment
 
-Currently, two official plugins are available:
+## Creator Details
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Name: Abhideep Ghosh
+2. Email: gabhiaf98@gmail.com
+3. LinkedIn: https://www.linkedin.com/in/abhideep-ghosh/
+4. GitHub: https://github.com/abhideepghosh
+5. LeetCode: https://leetcode.com/AbhideepGhosh/
+
+## Tech Stack Used
+
+1. React.js
+2. CSS
