@@ -20,11 +20,6 @@ const AddUser = () => {
 
   const formSubmit = (e) => {
     e.preventDefault();
-
-    console.log("submitted");
-    console.log(highlightedSearchItem);
-    // console.log(searchList.current);
-    console.log(filteredList);
     addLabel(filteredList[highlightedSearchItem]);
   };
 
