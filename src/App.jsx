@@ -1,10 +1,11 @@
 import "./App.css";
 import AddUser from "./components/AddUser/AddUser";
+import Header from "./components/header/Header";
 
 function App() {
   return (
     <div className="parent">
-      <h1>Pick users</h1>
+      <Header />
       <AddUser />
     </div>
   );

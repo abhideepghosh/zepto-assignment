@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
-import data from "./../../mock_data/mock_data";
+import "./AddUser.css";
+import data from "../../mock_data/mock_data";
 import Label from "../label/Label";
 
 const AddUser = () => {
@@ -90,64 +91,62 @@ const AddUser = () => {
     setHighlightedSearchItem(0);
   };
   return (
-    <div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          maxHeight: "min-content",
-          minHeight: "50px",
-        }}
-      >
-        {labels.map((d, i) => (
-          <Label
-            imgURL={d.imgURL}
-            title={d.title}
-            lastLabel={i === labels.length - 1 && backspaceCount === 1}
-            key={d.title + d.imgURL}
-            onClick={() => removeLabel(d)}
-          />
-        ))}
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        maxHeight: "min-content",
+        minHeight: "50px",
+      }}
+    >
+      {labels.map((d, i) => (
+        <Label
+          imgURL={d.imgURL}
+          title={d.title}
+          lastLabel={i === labels.length - 1 && backspaceCount === 1}
+          key={d.title + d.imgURL}
+          onClick={() => removeLabel(d)}
+        />
+      ))}
 
-        {searchList.current.length > 0 && (
-          <div className="filterList">
-            <input
-              placeholder="Add new user..."
-              ref={input}
-              autoFocus
-              type="text"
-              onChange={(e) => handleInput(e)}
-              value={filterText}
-              onClick={() => onInputClick()}
-              onKeyDown={onInputKeyDown}
-            />
-            <div
-              style={{
-                boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)",
-              }}
-            >
-              {displayFilterList &&
-                filteredList.map((d, i) => (
-                  <div
-                    className={`filterListItem ${
-                      highlightedSearchItem === i ? "highlight" : ""
-                    }`}
-                    key={d.title + d.imgURL}
-                    onClick={() => addChip(d)}
-                  >
-                    <div className="left">
-                      <div className="imageContainer">
-                        <img src={d.imgURL} alt={d.title} />
-                      </div>
+      {searchList.current.length > 0 && (
+        <div className="filterList">
+          <input
+            placeholder="Add new user..."
+            ref={input}
+            autoFocus
+            type="text"
+            onChange={(e) => handleInput(e)}
+            value={filterText}
+            onClick={() => onInputClick()}
+            onKeyDown={onInputKeyDown}
+          />
+          <div
+            style={{
+              boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)",
+            }}
+          >
+            {displayFilterList &&
+              filteredList.map((d, i) => (
+                <div
+                  className={`filterListItem ${
+                    highlightedSearchItem === i ? "highlight" : ""
+                  }`}
+                  key={d.title + d.imgURL}
+                  onClick={() => addChip(d)}
+                >
+                  <div className="left">
+                    <div className="imageContainer">
+                      <img src={d.imgURL} alt={d.title} />
                     </div>
-                    <span className="titleSpan">{d.title}</span>
-                    <span className="emailSpan">{d.email}</span>
                   </div>
-                ))}
-            </div>
+                  <span className="titleSpan">{d.title}</span>
+                  <span className="emailSpan">{d.email}</span>
+                </div>
+              ))}
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };
