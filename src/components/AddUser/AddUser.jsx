@@ -18,9 +18,21 @@ const AddUser = () => {
     setFilterText(e.target.value);
   };
 
+  const formSubmit = (e) => {
+    e.preventDefault();
+
+    console.log("submitted");
+    console.log(highlightedSearchItem);
+    // console.log(searchList.current);
+    console.log(filteredList);
+    addLabel(filteredList[highlightedSearchItem]);
+  };
+
   const onInputClick = () => {
     if (filterText !== "") return;
-    setFilteredList(searchList.current.filter((d) => !labels.includes(d)));
+    setFilteredList(
+      searchList.current.filter((userData) => !labels.includes(userData))
+    );
     setDisplayFilterList(true);
   };
 
@@ -76,7 +88,7 @@ const AddUser = () => {
     input?.current?.focus();
   };
 
-  const addChip = (labelData) => {
+  const addLabel = (labelData) => {
     const index = searchList.current.indexOf(labelData);
 
     if (index === -1) return;
@@ -91,7 +103,8 @@ const AddUser = () => {
     setHighlightedSearchItem(0);
   };
   return (
-    <div
+    <form
+      onSubmit={formSubmit}
       style={{
         display: "flex",
         flexDirection: "row",
@@ -114,7 +127,6 @@ const AddUser = () => {
           <input
             placeholder="Add new user..."
             ref={input}
-            autoFocus
             type="text"
             onChange={(e) => handleInput(e)}
             value={filterText}
@@ -127,27 +139,30 @@ const AddUser = () => {
             }}
           >
             {displayFilterList &&
-              filteredList.map((d, i) => (
+              filteredList.map((userData, i) => (
                 <div
                   className={`filterListItem ${
                     highlightedSearchItem === i ? "highlight" : ""
                   }`}
-                  key={d.title + d.imgURL}
-                  onClick={() => addChip(d)}
+                  key={userData.title + userData.imgURL}
+                  onClick={() => addLabel(userData)}
                 >
                   <div className="left">
                     <div className="imageContainer">
-                      <img src={d.imgURL} alt={d.title} />
+                      <img src={userData.imgURL} alt={userData.title} />
                     </div>
                   </div>
-                  <span className="titleSpan">{d.title}</span>
-                  <span className="emailSpan">{d.email}</span>
+                  <span className="titleSpan">{userData.title}</span>
+                  <span className="emailSpan">{userData.email}</span>
                 </div>
               ))}
           </div>
         </div>
       )}
-    </div>
+      <button type="submit" hidden>
+        Hello
+      </button>
+    </form>
   );
 };
 
