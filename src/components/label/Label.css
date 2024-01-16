@@ -1,9 +1,9 @@
-.chip-container {
+.label-container {
   border-bottom: 2px solid blue;
   height: 60px;
 }
 
-.chip {
+.label {
   display: inline-flex;
   padding: 0 25px;
   height: 50px;
@@ -15,7 +15,7 @@
   min-height: fit-content;
 }
 
-.chip img {
+.label img {
   float: left;
   margin: 0 10px 0 -25px;
   height: 50px;
@@ -33,7 +33,7 @@
   cursor: pointer;
 }
 
-.lastChip {
+.lastLabel {
   background-color: rgb(195, 193, 193);
   border: 1px solid blue;
 }

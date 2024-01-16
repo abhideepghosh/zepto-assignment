@@ -1,9 +1,9 @@
 import "./Label.css";
 
-const Label = ({ imgURL, title, onClick, lastChip }) => {
+const Label = ({ imgURL, title, onClick, lastLabel }) => {
   return (
-    <div className="chip-container">
-      <div className={`chip ${lastChip ? "lastChip" : ""}`}>
+    <div className="label-container">
+      <div className={`label ${lastLabel ? "lastLabel" : ""}`}>
         <img src={imgURL} alt={title} width="96" height="96" />
         {title}
         <span className="closeButton" onClick={() => onClick()}>
